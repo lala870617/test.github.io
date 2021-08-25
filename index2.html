@@ -48,7 +48,7 @@
 		}
 		
 		// 监听canvas的onmousedown事件
-		c1.touchend = function(ev){
+		c1.touchstart = function(ev){
 		c1.touchmove = function(e){
 			console.log(e);
 			var w = 50;			// 清除区域的宽度
@@ -58,7 +58,7 @@
 			ctx1.clearRect(x,y,w,h);
 		}
 		}
-		c1.touchstart = function(ev){
+		c1.touchend = function(ev){
 		// 取消onmousemove事件
 		c1.touchmove = null;
 		}
