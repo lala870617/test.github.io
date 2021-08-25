@@ -21,9 +21,9 @@
 	</head>
 	<body>
 		
-		<canvas id="c1" width="560" height="500"></canvas>
+		<canvas id="c1" width="500" height="500"></canvas>
 		
-		<canvas id="c2" width="560" height="500"></canvas>
+		<canvas id="c2" width="500" height="500"></canvas>
 		
 	</body>
 	<script type="text/javascript">
@@ -34,28 +34,28 @@
 		var ctx2 = c2.getContext("2d");
 		
 		
-		// 绘制图片到底层  canvas2
+		// 將圖片加到底部  canvas2
 		var imgs = new Image();
 		imgs.src = 'img/after.jpg';
 		imgs.onload = function(){
 			ctx2.drawImage(this,0,0)
 		}
 		
-		// 涂层绘制到顶层(即覆盖膜)  canvas1
+		// 上面的圖片  canvas1
 		var img2 = new Image();
 		img2.src = 'img/before.jpg';
 		img2.onload = function(){
 			ctx1.drawImage(this,0,0)
 		}
 		
-		// 监听canvas的onmousedown事件
+		// 監聽canvas的onmousedown事件
 		c1.ontouchstart = function(ev){
 		c1.ontouchmove = function(e){
 			console.log(e);
-			var w = 50;			// 清除区域的宽度
-			var h = 50;			// 清除区域的高度
-			var x = e.pageX-c1.offsetLeft - w/2;    // 清除区域的x位置
-			var y = e.pageY-c1.offsetTop - h/2;		// 清除区域的y位置
+			var w = 50;			// 清除區域的宽度
+			var h = 50;			// 清除區域的高度
+			var x = e.pageX-c1.offsetLeft - w/2;    // 清除區域的x位置
+			var y = e.pageY-c1.offsetTop - h/2;		// 清除區域的y位置
 			ctx1.clearRect(x,y,w,h);
 		}
 		}
