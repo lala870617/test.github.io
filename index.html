@@ -36,6 +36,7 @@
 		// 绘制图片到底层  canvas2
 		var imgs = new Image();
 		imgs.src = 'img/after3.jpg';
+		imgs.style.height='500px'
 		imgs.onload = function(){
 			ctx2.drawImage(this,0,0)
 		}
@@ -43,6 +44,7 @@
 		// 涂层绘制到顶层(即覆盖膜)  canvas1
 		var img2 = new Image();
 		img2.src = 'img/before2.jpg';
+		img2.style.height='500px'
 		img2.onload = function(){
 			ctx1.drawImage(this,0,0)
 		}
